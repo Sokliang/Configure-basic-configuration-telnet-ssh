@@ -79,7 +79,7 @@ SW3(config-vlan)#vlan 30
 SW3(config-vlan)#name Teacher
 end
 ```
-## Assign VLAN to ports
+## Step 3: Assign VLAN to ports
 ### SW1
 
 ```
@@ -117,7 +117,7 @@ SW3(config-if)#switchport mode access
 SW3(config-if)#switchport access vlan 30
 SW3(config-if)exit
 ```
-## Configure Trunk port
+## Step 4: Configure Trunk port
 ### SW1
 
 ```
