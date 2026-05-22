@@ -1,7 +1,7 @@
 # How to configure Virtual Local Area Network VLAN
 <img width="1317" height="642" alt="image" src="https://github.com/user-attachments/assets/7897d8ae-172c-45e6-8fda-c615632c3bed" />
 
-## Step 1: Basic configuration on switches
+## 1️⃣ Basic configuration on switches
 ### SW1
 ```
 Switch>enable
@@ -44,7 +44,7 @@ SW3(config)#login
 SW3(config)#exit
 ```
 
-## step 2: Create VLAN
+## 2️⃣ Create VLAN
 ### SW1
 ```
 Switch>enable
@@ -79,7 +79,7 @@ SW3(config-vlan)#vlan 30
 SW3(config-vlan)#name Teacher
 end
 ```
-## Step 3: Assign VLAN to ports
+## 3️⃣ Assign VLAN to ports
 ### SW1
 
 ```
@@ -117,7 +117,7 @@ SW3(config-if)#switchport mode access
 SW3(config-if)#switchport access vlan 30
 SW3(config-if)exit
 ```
-## Step 4: Configure Trunk port
+## 4️⃣ Configure Trunk port
 ### SW1
 
 ```
