@@ -4,150 +4,153 @@
 ## Step 1: Basic configuration on switches
 ### SW1
 ```
-enable
-configure terminal
-hostname SW1
-no ip domain-lookup
-enable secret cisco123
-service password-encryption
-line console 0
-password cisco
-login
-exit
+Switch>enable
+Switch#configure terminal
+SW1(config)#hostname SW1
+SW1(config)#no ip domain-lookup
+SW1(config)#enable secret cisco123
+SW1(config)#service password-encryption
+SW1(config)#line console 0
+SW1(config)#password cisco
+SW1(config)#login
+SW1(config)#exit
 ```
 
 ### SW2
 ```
-enable
-configure terminal
-hostname SW2
-no ip domain-lookup
-enable secret cisco123
-service password-encryption
-line console 0
-password cisco
-login
-exit
+Switch>enable
+Switch#configure terminal
+SW1(config)#hostname SW2
+SW1(config)#no ip domain-lookup
+SW1(config)#enable secret cisco123
+SW1(config)#service password-encryption
+SW1(config)#line console 0
+SW1(config)#password cisco
+SW1(config)#login
+SW1(config)#exit
 ```
 
 ### SW3
 ```
-enable
-configure terminal
-hostname SW3
-no ip domain-lookup
-enable secret cisco123
-service password-encryption
-line console 0
-password cisco
-login
-exit
+Switch>enable
+Switch#configure terminal
+SW1(config)#hostname SW3
+SW1(config)#no ip domain-lookup
+SW1(config)#enable secret cisco123
+SW1(config)#service password-encryption
+SW1(config)#line console 0
+SW1(config)#password cisco
+SW1(config)#login
+SW1(config)#exit
 ```
 
 ## step 2: Create VLAN
 ### SW1
 ```
-enable
-configure terminal
-vlan 10
-name Student
-vlan 20
-name IT
-vlan 30
-name Teacher
+Switch>enable
+Switch#configure terminal
+SW1(config)#vlan 10
+SW1(config-vlan)#name Student
+SW1(config-vlan)#vlan 20
+SW1(config-vlan)#name IT
+SW1(config-vlan)#vlan 30
+SW1(config-vlan)#name Teacher
 end
 ```
 
 ### SW2
 ```
-enable
-configure terminal
-vlan 10
-name Student
-vlan 20
-name IT
-vlan 30
-name Teacher
+Switch>enable
+Switch#configure terminal
+SW1(config)#vlan 10
+SW1(config-vlan)#name Student
+SW1(config-vlan)#vlan 20
+SW1(config-vlan)#name IT
+SW1(config-vlan)#vlan 30
+SW1(config-vlan)#name Teacher
 end
 ```
 ### SW3
 ```
-enable
-configure terminal
-vlan 10
-name Student
-vlan 20
-name IT
-vlan 30
-name Teacher
+Switch>enable
+Switch#configure terminal
+SW1(config)#vlan 10
+SW1(config-vlan)#name Student
+SW1(config-vlan)#vlan 20
+SW1(config-vlan)#name IT
+SW1(config-vlan)#vlan 30
+SW1(config-vlan)#name Teacher
 end
 ```
 ## Assign VLAN to ports
 ### SW1
 
 ```
-configure terminal
-interface fastEthernet0/1
-switchport mode access
-switchport access vlan 10
+SW1(config)#interface fastEthernet0/1
+SW1(config-if)##switchport mode access
+SW1(config-if)#switchport access vlan 10
+SW1(config-if)#exit
 
-configure terminal
-interface fastEthernet0/2
-switchport mode access
-switchport access vlan 20
+SW1(config)#interface fastEthernet0/2
+SW1(config-if)#switchport mode access
+SW1(config-if)#switchport access vlan 20
+SW1(config-if)exit
 
-configure terminal
-interface fastEthernet0/3
-switchport mode access
-switchport access vlan 30
+SW1(config)#interface fastEthernet0/3
+SW1(config-if)#switchport mode access
+SW1(config-if)#switchport access vlan 30
+SW1(config-if)exit
 ```
 
 ### SW3
 
 ```
-configure terminal
-interface fastEthernet0/3
-switchport mode access
-switchport access vlan 10
+SW3(config)#interface fastEthernet0/3
+SW3(config-if)##switchport mode access
+SW3(config-if)#switchport access vlan 10
+SW3(config-if)#exit
 
-configure terminal
-interface fastEthernet0/2
-switchport mode access
-switchport access vlan 20
+SW3(config)#interface fastEthernet0/2
+SW3(config-if)#switchport mode access
+SW3(config-if)#switchport access vlan 20
+SW3(config-if)exit
 
-configure terminal
-interface fastEthernet0/3
-switchport mode access
-switchport access vlan 10
+SW3(config)#interface fastEthernet0/1
+SW3(config-if)#switchport mode access
+SW3(config-if)#switchport access vlan 30
+SW3(config-if)exit
 ```
 ## Configure Trunk port
 ### SW1
 
 ```
-configure terminal
-interface Giga0/1
-switchport mode trunk
-switchport trunk allowed vlan 10,20,30
+SW1#configure terminal
+SW1(config)#interface Giga0/1
+SW1(config-if)#switchport mode trunk
+SW1(config-if)#switchport trunk allowed vlan 10,20,30
 ```
 
 ### SW2
 
 ```
-configure terminal
-interface Giga0/1
-switchport mode trunk
-switchport trunk allowed vlan 10,20,30
+SW2#configure terminal
+SW2(config)#interface Giga0/1
+SW2(config-if)#switchport mode trunk
+SW2(config-if)#switchport trunk allowed vlan 10,20,30
+SW2(config-if)#exit
 
-configure terminal
-interface Giga0/2
-switchport mode trunk
-switchport trunk allowed vlan 10,20,30
+SW2#configure terminal
+SW2(config)#interface Giga0/2
+SW2(config-if)#switchport mode trunk
+SW2(config-if)#switchport trunk allowed vlan 10,20,30
+SW2(config-if)#exit
 ```
 ### SW3
 
 ```
-configure terminal
-interface Giga0/1
-switchport mode trunk
-switchport trunk allowed vlan 10,20,30
+SW3#configure terminal
+SW3(config)#interface Giga0/1
+SW3(config-if)#switchport mode trunk
+SW3(config-if)#switchport trunk allowed vlan 10,20,30
+SW3(config-if)#exit
 ```
