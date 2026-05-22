@@ -20,28 +20,28 @@ SW1(config)#exit
 ```
 Switch>enable
 Switch#configure terminal
-SW1(config)#hostname SW2
-SW1(config)#no ip domain-lookup
-SW1(config)#enable secret cisco123
-SW1(config)#service password-encryption
-SW1(config)#line console 0
-SW1(config)#password cisco
-SW1(config)#login
-SW1(config)#exit
+Switch(config)#hostname SW2
+SW2(config)#no ip domain-lookup
+SW2(config)#enable secret cisco123
+SW2(config)#service password-encryption
+SW2(config)#line console 0
+SW2(config)#password cisco
+SW2(config)#login
+SW2(config)#exit
 ```
 
 ### SW3
 ```
 Switch>enable
 Switch#configure terminal
-SW1(config)#hostname SW3
-SW1(config)#no ip domain-lookup
-SW1(config)#enable secret cisco123
-SW1(config)#service password-encryption
-SW1(config)#line console 0
-SW1(config)#password cisco
-SW1(config)#login
-SW1(config)#exit
+Switch(config)#hostname SW3
+SW3(config)#no ip domain-lookup
+SW3(config)#enable secret cisco123
+SW3(config)#service password-encryption
+SW3(config)#line console 0
+SW3(config)#password cisco
+SW3(config)#login
+SW3(config)#exit
 ```
 
 ## step 2: Create VLAN
@@ -60,26 +60,23 @@ end
 
 ### SW2
 ```
-Switch>enable
-Switch#configure terminal
-SW1(config)#vlan 10
-SW1(config-vlan)#name Student
-SW1(config-vlan)#vlan 20
-SW1(config-vlan)#name IT
-SW1(config-vlan)#vlan 30
-SW1(config-vlan)#name Teacher
+SW2(config)#vlan 10
+SW2(config-vlan)#name Student
+SW2(config-vlan)#vlan 20
+SW2(config-vlan)#name IT
+SW2(config-vlan)#vlan 30
+SW2(config-vlan)#name Teacher
 end
 ```
 ### SW3
 ```
-Switch>enable
-Switch#configure terminal
-SW1(config)#vlan 10
-SW1(config-vlan)#name Student
-SW1(config-vlan)#vlan 20
-SW1(config-vlan)#name IT
-SW1(config-vlan)#vlan 30
-SW1(config-vlan)#name Teacher
+SW3h#configure terminal
+SW3(config)#vlan 10
+SW3(config-vlan)#name Student
+SW3(config-vlan)#vlan 20
+SW3(config-vlan)#name IT
+SW3(config-vlan)#vlan 30
+SW3(config-vlan)#name Teacher
 end
 ```
 ## Assign VLAN to ports
