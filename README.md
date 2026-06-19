@@ -1,4 +1,4 @@
-###Homework 2 - Basic switch configuration
+### Homework 2 - Basic switch configuration
 Here is a complete, step-by-step guide to setting up and configuring this topology in Cisco Packet Tracer.
 
 ---
